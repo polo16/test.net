@@ -1,35 +1,19 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class Form1
+Public Class ConnectionClassExample
     Public bandera_cnx As Boolean
     Friend conexion As MySqlConnection
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        connect()
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        requestToDb()
-    End Sub
-
-    Public Sub connect()
-        Dim nameCharacter As String = "polo"
-        Const MyVar = 459
-        Const MyInt As Integer = 5
-        MsgBox(MyVar)
-        MsgBox("¡Su respuesta es correcta!", 0, "Cuadro de Respuesta")
-    End Sub
-
 
     Public Sub connectMysql()
         Try
-            Dim Host As String = "192.168.13.251:3306"
+            Dim Host As String = "192.168.13.255:3000"
             Dim falloConexion = 0
             Dim conexion = New MySqlConnection
             Dim conexionTransaccion = New MySqlConnection
             Dim lector As MySqlDataReader
             'ConfigEncryption("puropollo.exe")
             'conexion.ConnectionString = ConfigurationManager.ConnectionStrings("DBConexion").ToString & "Host=" & Host & ";"
-            conexion.ConnectionString = "User ID=puropollo;Password=purpmorz2478;Host= 192.168.13.251; Database=test; allow user variables = true;default command timeout=3600; CharSet=utf8;"
-            conexionTransaccion.ConnectionString = "User ID=puropollo;Password=purpmorz2478;Host= 192.168.13.251; Database=test; allow user variables = true;default command timeout=3600; CharSet=utf8;"
+            conexion.ConnectionString = "User ID=user;Password=pass123;Host= 192.168.13.255; Database=test; allow user variables = true;default command timeout=3600; CharSet=utf8;"
+            conexionTransaccion.ConnectionString = "User ID=user;Password=pass123;Host= 192.168.13.255; Database=test; allow user variables = true;default command timeout=3600; CharSet=utf8;"
             conexion.Open()
             MsgBox("La Conexión a MySQL es Correcta")
             requestToDb()
@@ -68,4 +52,5 @@ Public Class Form1
 
         'End Try
     End Sub
+
 End Class
