@@ -10,7 +10,7 @@ Public Class Form1
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
-        functions.selectQuery("select * form test.sucursal where ID_SUCURSAL = 1")
+        functions.allInOne("SELECT NOMBRE FROM sucursal where ID_SUCURSAL = 1")
     End Sub
 
     Public Sub connect()
